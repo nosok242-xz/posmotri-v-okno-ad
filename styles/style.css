@@ -1,22 +1,22 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box; /// установка box sizing для всех элементов(*) и псевдо элементов
 }
 html {
-  block-size: 100%;
+  block-size: 100%; /// установка высоты на 100%
 }
 .page {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
+  justify-content: center; /// центрирование по горизонтале
+  align-items: center; /// центрирование по вертикале
+  inline-size: 1200px; /// установка ширины
+  block-size: 100%; /// установка высоты на % от родительского контейнера
+  margin: auto; /// авто отступы (внешние)
+  color: #fff; /// цвет для текста в page
+  font-family: 'Fira Sans Condensed', sans-serif; /// задают шрифт для текста в page
+  font-size: 18px; /// размер шрифта
+  background-color: #1b1919; /// цвет фона
 }
 h1,
 h2,
@@ -28,115 +28,115 @@ ol,
 li,
 blockquote,
 fieldset {
-  margin: 0;
-  padding: 0;
+  margin: 0; /// сброс внешних отступов
+  padding: 0; /// сброс внутренних отступов
 }
 ul,
 ol {
-  list-style: none;
+  list-style: none; /// удаление маркеров списка
 }
 .visually-hidden {
-  position: absolute;
+  position: absolute; /// абсолютное вырывание элементов из потока документа
   inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
+  block-size: 1px; /// установка минимального размера
+  overflow: hidden; /// скрывает переполнение
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
 }
 .content {
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  grid-template-rows: auto 1fr;
-  gap: 30px;
-  align-items: end;
-  inline-size: 1140px;
-  margin: 0 auto;
+  display: grid; /// включение грид-раскладки
+  grid-template-columns: 1fr 400px; /// две колонки - левая гибкая, правая фиксированная
+  grid-template-rows: auto 1fr; /// две строки - верх по контенту, низ заполняет оставшееся
+  gap: 30px; /// расстояние между элементами
+  align-items: end; /// выравнивание по нижнему краю
+  inline-size: 1140px; /// ширина контейнера
+  margin: 0 auto; /// центрирование контейнера
 }
 .result {
-  grid-column: 1;
-  grid-row: 1 / -1;
+  grid-column: 1; /// первая колонка грида
+  grid-row: 1 / -1; /// занимает все строки
 }
 .content_details {
-  grid-column: 2;
-  grid-row: 1 / -1;
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
+  grid-column: 2; /// вторая колонка
+  grid-row: 1 / -1; /// также на всю высоту
+  display: flex; /// флекс-контейнер
+  flex-direction: column; /// направление сверху вниз
+  gap: 26px; /// отступы между блоками
 }
 .search-form {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+  display: flex; /// флекс-контейнер
+  justify-content: space-between; /// равномерное распределение
+  align-items: flex-start; /// выравнивание по верхнему краю
+  gap: 40px; /// расстояние между элементами формы
 }
 .content_list {
-  position: relative;
-  block-size: 298px;
-  overflow-y: auto;
+  position: relative; /// для позиционирования прелоадера
+  block-size: 298px; /// высота области списка
+  overflow-y: auto; /// вертикальная прокрутка
 }
 .content_list::-webkit-scrollbar {
-  width: 4px;
+  width: 4px; /// ширина скроллбара
 }
 .content_list::-webkit-scrollbar-track {
-  background: rgb(217 217 217 / 10%);
+  background: rgb(217 217 217 / 10%); /// фон дорожки скроллбара
 }
 .content_list::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #D9D9D9; /// цвет ползунка
 }
 .result_video-container {
-  position: relative;
-  inline-size: 711px;
-  block-size: 386px;
-  margin-block-end: 16px;
+  position: relative; /// для позиционирования прелоадера
+  inline-size: 711px; /// ширина контейнера
+  block-size: 386px; /// высота контейнера
+  margin-block-end: 16px; /// отступ снизу
 }
 .result_video {
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
+  inline-size: 100%; /// видео растягивается на всю ширину
+  block-size: 100%; /// и на всю высоту
+  object-fit: cover; /// обрезка с сохранением пропорций
 }
 .content_list-item {
-  margin-block-end: 30px;
-  padding: 0 3px;
+  margin-block-end: 30px; /// отступ между элементами списка
+  padding: 0 3px; /// горизонтальные отступы
 }
 .content_list-item:last-child {
-  margin-block-end: 0;
+  margin-block-end: 0; /// убирает отступ у последнего элемента
 }
 .content_video-card {
-  display: flex;
-  align-items: flex-start;
+  display: flex; /// флекс для выравнивания превью и текста
+  align-items: flex-start; /// выравнивание по верху
 }
 .content_video-card-description-container {
-  flex-grow: 1;
+  flex-grow: 1; /// текст занимает всю оставшуюся ширину
 }
 .content_video-card-thumbnail {
-  inline-size: 194px;
-  block-size: 103px;
-  margin-inline-start: 5px;
-  object-fit: cover;
-  object-position: center;
+  inline-size: 194px; /// ширина превью
+  block-size: 103px; /// высота превью
+  margin-inline-start: 5px; /// отступ слева
+  object-fit: cover; /// обрезка по контейнеру
+  object-position: center; /// центрирование изображения
 }
 .search-form_fieldset-title {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1;
-  margin-block-end: 5px;
+  margin-block-end: 5px; /// отступ под заголовком
 }
 .title {
   font-family: 'Oswald', sans-serif;
   font-size: 75px;
   font-weight: 700;
   line-height: 0.94;
-  text-transform: uppercase;
+  text-transform: uppercase; /// все буквы заглавные
 }
 .content_accent {
-  color: #545050;
+  color: #545050; /// выделенный (серый) цвет
 }
 .content_card-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
+  display: block; /// блочная ссылка
+  text-decoration: none; /// без подчеркивания
+  color: inherit; /// цвет наследуется от родителя
 }
 .content_video-card-title {
   font-family: 'Oswald', sans-serif;
@@ -144,44 +144,44 @@ ol {
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-  margin-block-end: 6px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  margin-block-end: 6px; /// отступ под заголовком
+  overflow: hidden; /// обрезание переполнения
+  text-overflow: ellipsis; /// троеточие при длинных заголовках
+  white-space: nowrap; /// запрет переноса строк
 }
 .content_video-card-description {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 0.9;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  display: -webkit-box; /// многострочное обрезание
+  -webkit-line-clamp: 4; /// максимум 4 строки
+  -webkit-box-orient: vertical; /// вертикальная ориентация
+  overflow: hidden; /// скрытие лишнего текста
 }
 .search-form_fieldset {
-  border: none;
-  flex-grow: 1;
+  border: none; /// убирает рамку
+  flex-grow: 1; /// поле растягивается
 }
 .search-form_checkbox-list {
   display: flex;
-  gap: 15px;
+  gap: 15px; /// расстояние между чекбоксами
 }
 .search-form_label {
   display: flex;
   align-items: center;
-  inline-size: fit-content;
-  cursor: pointer;
+  inline-size: fit-content; /// ширина по содержимому
+  cursor: pointer; /// курсор при наведении
 }
 .search-form_label:has(:focus-visible) {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
+  outline: 1px solid #fff; /// белая обводка при фокусе с клавиатуры
+  outline-offset: 1px; /// отступ обводки
 }
 .search-form_label-text {
-  margin-inline-start: 5px;
+  margin-inline-start: 5px; /// отступ между чекбоксом и текстом
 }
 .search-form_label:hover .search-form_label-text {
-  text-decoration: underline;
+  text-decoration: underline; /// подчеркивание при наведении
 }
 .search-form_textfield {
   min-inline-size: 225px;
@@ -194,17 +194,17 @@ ol {
   border: none;
   border-block-start: 1px solid #fff;
   border-block-end: 1px solid #fff;
-  appearance: none;
+  appearance: none; /// убирает стандартный стиль браузера
 }
 .search-form_textfield:focus {
-  outline: none;
+  outline: none; /// убирает стандартную обводку
 }
 .search-form_pseudo-checkbox {
   position: relative;
   display: inline-block;
   inline-size: 19px;
   block-size: 19px;
-  border: 1px solid #fff;
+  border: 1px solid #fff; /// рамка чекбокса
 }
 .search-form_checkbox:checked + .search-form_pseudo-checkbox::after {
   content: '';
@@ -213,7 +213,7 @@ ol {
   inset-inline-start: 1px;
   inline-size: 15px;
   block-size: 15px;
-  background-color: #fff;
+  background-color: #fff; /// белый квадрат внутри чекбокса при выборе
 }
 .button {
   padding: 6px 73.5px;
@@ -227,52 +227,52 @@ ol {
   cursor: pointer;
 }
 .button:hover {
-  text-decoration: underline;
+  text-decoration: underline; /// подчеркивание при наведении
 }
 .button:active {
-  background-color: #545050;
+  background-color: #545050; /// цвет при нажатии
 }
 .button:focus {
-  outline: none;
+  outline: none; /// убирает стандартную обводку
 }
 .button:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 1px;
+  outline-offset: 1px; /// отступ белой обводки при фокусе
 }
 .search-form_submit-button {
-  align-self: flex-end;
+  align-self: flex-end; /// кнопка внизу формы
   min-inline-size: 194px;
 }
 .more-button {
-  inline-size: 100%;
+  inline-size: 100%; /// кнопка на всю ширину
   padding: 6px;
 }
 .content_card-link:hover {
-  text-decoration: underline;
+  text-decoration: underline; /// подчеркивание при наведении на карточку
 }
 .content_card-link:active {
-  background-color: #545050;
+  background-color: #545050; /// затемнение при клике
 }
 .content_card-link:focus {
   outline: none;
 }
 .content_card-link:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px solid #fff; /// белая обводка при фокусе
 }
 .content_card-link_current {
-  background-color: #545050;
+  background-color: #545050; /// активная карточка
 }
 .button,
 .content_card-link,
 .search-form_label {
-  cursor: pointer;
+  cursor: pointer; /// курсор указатель на всех интерактивных элементах
 }
 .preloader {
   position: absolute;
-  inset: 0;
+  inset: 0; /// занимает всё пространство родителя
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5); /// полупрозрачный фон
+  z-index: 1; /// поверх контента
 }
